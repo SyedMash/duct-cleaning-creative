@@ -118,7 +118,7 @@
 
 @theme {
     --color-brand-offwhite: #fdfcf3;
-    --color-brand-green: #4ade80;
+    --color-brand-green: var(--color-sky-500);
     --color-brand-black: #111117;
     --color-brand-gray: #555555;
     --font-manrope: "Manrope", sans-serif;
@@ -127,7 +127,7 @@
 
 @layer utilities {
     .flex-center {
-        @apply flex items-center justify-center;
+        @apply flex items-center justify-center text-sky-500;
     }
 }
 

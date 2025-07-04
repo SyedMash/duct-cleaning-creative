@@ -29,14 +29,18 @@ export default function Home() {
   }, [isLoaded]);
 
   useGSAP(() => {
-    const introTl = gsap.timeline({ defaults: { ease: "power4.out" } });
+    const introTl = gsap.timeline({ defaults: { ease: "power4.out", delay: 3 } });
     introTl.to(".img-wrapper", {
-      delay: 3,
       opacity: 1,
       scale: 1,
       duration: 1.5,
       ease: "power4.out",
-    });
+    }).from(".introElement", {
+      opacity: 0,
+      y: "100%",
+      stagger: 0.4,
+      duration: 1.5
+    }, 0);
   }, []);
 
   return (
@@ -54,29 +58,36 @@ export default function Home() {
         </div>
         <div
           className={
-            "absolute flex h-full w-full flex-col justify-center bg-black/50 pl-4 backdrop-opacity-30 md:pl-6 lg:px-8 xl:px-12 2xl:px-20"
+            "absolute flex h-full w-full flex-col gap-8 justify-center bg-black/50 pl-4 backdrop-opacity-30 md:pl-6 lg:px-8 xl:px-12 2xl:px-20"
           }
         >
-          <h1
-            className={
-              "font-manrope text-3xl font-semibold md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-9xl"
-            }
-          >
-            AIRO <span className={"text-brand-green"}>FIX</span>
-          </h1>
-          <p className={"max-w-4xl text-balance"}>
-            Your home deserves more than just clean floors it deserves clean
-            air. Our certified duct cleaning service helps you breathe easier by
-            eliminating hidden contaminants with precision and care.
-          </p>
-          <div>
-            <CustomButton />
+          <div className="space-y-2">
+            <div className="overflow-hidden">
+              <h1
+                className={
+                  "font-manrope text-3xl font-semibold md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-9xl introElement"
+                }
+              >
+                AIRO <span className={"text-brand-green"}>FIX</span>
+              </h1>
+            </div>
+            <div className="overflow-hidden">
+              <p className={"max-w-4xl text-balance introElement"}>
+                Your home deserves more than just clean floors it deserves clean
+                air. Our certified duct cleaning service helps you breathe easier by
+                eliminating hidden contaminants with precision and care.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-6 overflow-hidden ">
+            <CustomButton text="Book Now" href="/book-service" className="introElement" />
+            <CustomButton text="CALL NOW" href="tel:+1234567890" className="introElement" />
           </div>
         </div>
       </section>
 
       <Bounded>
-        <h1>Hello</h1>
+        <p>hello this is the second section of the page</p>
       </Bounded>
     </main>
   );

@@ -11,7 +11,7 @@
 .btn-17 {
     -webkit-tap-highlight-color: transparent;
     -webkit-appearance: button;
-    background-color: #000;
+    /* background-color: #00000050; */
     background-image: none;
     color: #fff;
     cursor: pointer;
@@ -23,6 +23,7 @@
     line-height: 1.5;
     margin: 0;
     -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+    backdrop-filter: blur(10px);
     padding: 0;
     text-transform: uppercase;
 }
@@ -46,7 +47,6 @@
 
 .btn-17 {
     border-radius: 99rem;
-    border-width: 2px;
     padding: 0.8rem 3rem;
     z-index: 0;
 }
