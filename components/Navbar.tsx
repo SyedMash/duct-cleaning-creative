@@ -1,0 +1,167 @@
+"use client";
+
+import React, { useRef, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { navLinks } from "@/constants";
+import Image from "next/image";
+import { clsx } from "clsx";
+import { IoMenuSharp } from "react-icons/io5";
+import { RiCloseLargeLine } from "react-icons/ri";
+
+gsap.registerPlugin(useGSAP);
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [image, setImage] = useState<string>("");
+  const [isHovered, setIsHovered] = useState(false);
+
+  const navigationSection = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+
+  const handleNavbar = () => {
+    if (isOpen) {
+      setIsOpen(false);
+      gsap
+        .timeline()
+        .to(
+          ".leftDiv",
+          {
+            opacity: 0,
+            duration: 1,
+            ease: "power4.out",
+            // delay: 0.71,
+          },
+          "-=0.2",
+        )
+        .to(
+          ".rightDiv",
+          {
+            x: "100%",
+            duration: 1,
+            ease: "power4.out",
+          },
+          0,
+        );
+    } else {
+      setIsOpen(true);
+      gsap
+        .timeline()
+        .to(".leftDiv", {
+          opacity: 1,
+          duration: 2,
+          ease: "power4.out",
+          delay: 0.5,
+        })
+        .to(
+          ".rightDiv",
+          {
+            x: 0,
+            duration: 1,
+            ease: "power4.out",
+          },
+          0,
+        );
+    }
+  };
+
+  const handleHoverImage = (imagePath: string) => {
+    setIsHovered(true);
+    setImage(imagePath);
+
+    gsap.to(".leftDiv", {
+      opacity: 0,
+      duration: 1,
+      ease: "power4.out",
+    });
+
+    gsap.from(imageRef.current, {
+      duration: 1,
+      ease: "expo.out",
+      scale: 1.5,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setImage("/images/img4.jpg");
+    gsap.to(imageRef.current, {
+      duration: 1,
+      ease: "expo.out",
+      scale: 1,
+    });
+
+    gsap.to(".leftDiv", {
+      opacity: 1,
+      duration: 1,
+      ease: "power4.out",
+    });
+  };
+
+  return (
+    <header className={"fixed z-50 w-full overflow-hidden"}>
+      <nav className={"flex items-center justify-between p-12"}>
+        <h1
+          className={"font-manrope text-brand-offwhite text-3xl font-semibold"}
+        >
+          AERO <span className={"text-brand-green"}>FIX</span>
+        </h1>
+        <h1
+          onClick={handleNavbar}
+          className={clsx(
+            "z-50 cursor-pointer text-2xl font-semibold transition-colors duration-700",
+            isOpen ? "text-brand-offwhite" : "text-brand-offwhite",
+          )}
+        >
+          {isOpen ? <RiCloseLargeLine size={48} /> : <IoMenuSharp size={48} />}
+        </h1>
+      </nav>
+
+      <section
+        className={"fixed inset-0 flex h-screen w-screen"}
+        ref={navigationSection}
+      >
+        <div className={"pointer-events-none relative z-50 flex-1"}>
+          {isHovered && (
+            <Image
+              src={image || "/images/img4.jpg"}
+              alt={"img"}
+              fill={true}
+              className={"object-cover"}
+              ref={imageRef}
+            />
+          )}
+
+          <div
+            className={
+              "leftDiv flex-center absolute inset-0 size-full bg-black/30 opacity-0 backdrop-blur-3xl"
+            }
+          >
+            <h1 className={"font-manrope text-9xl font-semibold"}>AERO FIX</h1>
+          </div>
+        </div>
+        <div
+          className={
+            "rightDiv bg-brand-black text-brand-offwhite z-50 flex flex-10/12 translate-x-full flex-col justify-center p-6 md:flex-1 md:p-8"
+          }
+        >
+          {navLinks.map((link) => (
+            <h1
+              key={link.name}
+              className={
+                "font-fira hover:text-brand-green w-fit cursor-pointer text-2xl leading-[50px] font-semibold transition-all duration-700 md:text-4xl md:leading-[100px] xl:text-5xl 2xl:text-8xl"
+              }
+              onMouseEnter={() => {
+                handleHoverImage(link.imageUrl);
+              }}
+              onMouseLeave={handleMouseLeave}
+            >
+              {link.name}
+            </h1>
+          ))}
+        </div>
+      </section>
+    </header>
+  );
+};
+export default Navbar;
