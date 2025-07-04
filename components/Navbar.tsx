@@ -18,6 +18,7 @@ const Navbar = () => {
 
   const navigationSection = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
+  const parentContainerRef = useRef<HTMLImageElement>(null);
 
   const handleNavbar = () => {
     if (isOpen) {
@@ -99,12 +100,15 @@ const Navbar = () => {
   };
 
   return (
-    <header className={"fixed z-50 w-full overflow-hidden"}>
-      <nav className={"flex items-center justify-between p-12"}>
+    <header
+      className={"fixed z-50 w-full overflow-hidden bg-transparent"}
+      ref={parentContainerRef}
+    >
+      <nav className={"z-50 flex items-center justify-between p-12"}>
         <h1
           className={"font-manrope text-brand-offwhite text-3xl font-semibold"}
         >
-          AERO <span className={"text-brand-green"}>FIX</span>
+          AIRO <span className={"text-brand-green"}>FIX</span>
         </h1>
         <h1
           onClick={handleNavbar}
@@ -116,12 +120,11 @@ const Navbar = () => {
           {isOpen ? <RiCloseLargeLine size={48} /> : <IoMenuSharp size={48} />}
         </h1>
       </nav>
-
       <section
-        className={"fixed inset-0 flex h-screen w-screen"}
+        className={"fixed inset-0 z-30 flex h-screen w-screen"}
         ref={navigationSection}
       >
-        <div className={"pointer-events-none relative z-50 flex-1"}>
+        <div className={"pointer-events-none relative flex-1"}>
           {isHovered && (
             <Image
               src={image || "/images/img4.jpg"}
@@ -131,18 +134,21 @@ const Navbar = () => {
               ref={imageRef}
             />
           )}
-
           <div
             className={
               "leftDiv flex-center absolute inset-0 size-full bg-black/30 opacity-0 backdrop-blur-3xl"
             }
           >
-            <h1 className={"font-manrope text-9xl font-semibold"}>AERO FIX</h1>
+            <h1
+              className={"font-manrope hidden text-9xl font-semibold md:block"}
+            >
+              AIRO <span className={"text-brand-green"}>FIX</span>
+            </h1>
           </div>
         </div>
         <div
           className={
-            "rightDiv bg-brand-black text-brand-offwhite z-50 flex flex-10/12 translate-x-full flex-col justify-center p-6 md:flex-1 md:p-8"
+            "rightDiv bg-brand-black text-brand-offwhite flex flex-10/12 translate-x-full flex-col justify-center p-6 md:flex-1 md:p-8"
           }
         >
           {navLinks.map((link) => (

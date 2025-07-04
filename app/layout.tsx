@@ -22,7 +22,7 @@ const firaSans = Fira_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "True Fix",
+  title: "Airo Fix",
   description: "A duct cleaning service company",
 };
 
@@ -34,9 +34,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${manrope.variable} ${firaSans.variable}  bg-brand-black text-brand-offwhite antialiased`}
+        className={`${inter.className} ${manrope.variable} ${firaSans.variable} bg-brand-black text-brand-offwhite antialiased`}
       >
-      <Navbar />
+        <Navbar />
         {children}
       </body>
     </html>
