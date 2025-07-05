@@ -16,22 +16,6 @@ gsap.registerPlugin(SplitText, useGSAP, ScrollTrigger);
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-    const disableScroll = (e: Event) => e.preventDefault();
-
-    window.addEventListener("wheel", disableScroll, { passive: false });
-    window.addEventListener("touchmove", disableScroll, { passive: false });
-
-    if (isLoaded) {
-      window.removeEventListener("wheel", disableScroll);
-      window.removeEventListener("touchmove", disableScroll);
-    }
-
-    return () => {
-      window.removeEventListener("wheel", disableScroll);
-      window.removeEventListener("touchmove", disableScroll);
-    };
-  }, [isLoaded]);
 
   useGSAP(() => {
     const introTl = gsap.timeline({
