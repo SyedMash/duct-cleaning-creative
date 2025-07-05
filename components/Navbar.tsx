@@ -8,7 +8,7 @@ import Image from "next/image";
 import { clsx } from "clsx";
 import { IoMenuSharp } from "react-icons/io5";
 import { RiCloseLargeLine } from "react-icons/ri";
-
+import { useScroll } from "@/hooks/useScroll";
 
 gsap.registerPlugin(useGSAP);
 
@@ -20,7 +20,6 @@ const Navbar = () => {
   const navigationSection = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const parentContainerRef = useRef<HTMLImageElement>(null);
-
 
   const handleNavbar = () => {
     if (isOpen) {
@@ -42,7 +41,7 @@ const Navbar = () => {
             x: "100%",
             duration: 1,
             ease: "power4.out",
-            onComplete: () => setIsOpen(false)
+            onComplete: () => setIsOpen(false),
           },
           0,
         );
@@ -123,10 +122,9 @@ const Navbar = () => {
         </h1>
       </nav>
       <section
-        className={"fixed left-0 top-0 h-screen w-screen"}
+        className={"fixed top-0 left-0 h-screen w-screen"}
         style={{ display: isOpen ? "flex" : "none" }}
         ref={navigationSection}
-
       >
         <div className={"pointer-events-none relative flex-1"}>
           {isHovered && (
@@ -140,11 +138,13 @@ const Navbar = () => {
           )}
           <div
             className={
-              "leftDiv flex-center absolute inset-0 size-full pointer-events-none bg-black/30 opacity-0 backdrop-blur-3xl"
+              "leftDiv flex-center pointer-events-none absolute inset-0 size-full bg-black/30 opacity-0 backdrop-blur-3xl"
             }
           >
             <h1
-              className={"font-manrope hidden text-9xl text-brand-offwhite font-semibold md:block"}
+              className={
+                "font-manrope text-brand-offwhite hidden text-9xl font-semibold md:block"
+              }
             >
               AIRO <span className={"text-brand-green"}>FIX</span>
             </h1>

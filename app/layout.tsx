@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Manrope, Fira_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Smooth from "@/components/Smooth";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -22,8 +23,8 @@ const firaSans = Fira_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Airo Fix",
-  description: "A duct cleaning service company",
+  title: "Airo Fix | Home",
+  description: "Breathe in the Difference",
 };
 
 export default function RootLayout({
@@ -36,8 +37,10 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${manrope.variable} ${firaSans.variable} bg-brand-black text-brand-offwhite antialiased`}
       >
-        <Navbar />
-        {children}
+        <Smooth>
+          <Navbar />
+          {children}
+        </Smooth>
       </body>
     </html>
   );

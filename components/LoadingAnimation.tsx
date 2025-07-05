@@ -2,15 +2,16 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useRef } from "react";
 
-interface Props {
-  onCompleted?: () => void;
-}
+export default function Home() {
+  const loaderRef = useRef(null);
+  const contentRef = useRef(null);
 
-export default function Loader({ onCompleted }: Props) {
   useGSAP(() => {
-    const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+    const tl = gsap.timeline();
 
+    // Step 1: Animate stroke draw
     tl.fromTo(
       ".char",
       {
@@ -23,49 +24,70 @@ export default function Loader({ onCompleted }: Props) {
         strokeDashoffset: 0,
         opacity: 1,
         scale: 1,
-        duration: 3,
-        stagger: 0.15,
+        duration: 1,
+        stagger: 0.1,
+        ease: "power2.out",
       },
     )
+      // Step 2: Fill text
       .to(
         ".char",
         {
-          fill: "#fff",
+          fill: "#0ea5e9", // Sky blue fill
           stroke: "transparent",
-          duration: 1,
+          duration: 0.6,
         },
-        "<+0.5",
+        "<+0.3",
       )
-      .to(".mainDiv", {
-        opacity: 0,
-        duration: 1,
-        onComplete: onCompleted,
-      });
+      // Step 3: Fade out loader
+      .to(
+        loaderRef.current,
+        {
+          opacity: 0,
+          duration: 0.8,
+          pointerEvents: "none",
+        },
+        "+=0.5",
+      )
+      // Step 4: Fade in homepage
+      .fromTo(
+        contentRef.current,
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
+        "<",
+      );
   }, []);
 
   return (
-    <div className="bg-brand-black mainDiv fixed z-50 flex h-screen w-full items-center justify-center">
-      <svg
-        width="70%"
-        viewBox="0 0 1200 300"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+    <main className="relative">
+      {/* Loader */}
+      <div
+        id="loader"
+        ref={loaderRef}
+        className="bg-brand-black fixed inset-0 z-50 flex items-center justify-center"
       >
-        <text
-          x="50%"
-          y="50%"
-          dominantBaseline="middle"
-          textAnchor="middle"
-          fontSize="80"
-          fontWeight="700"
-          className="char"
-          stroke="#4ade80"
-          fill="transparent"
-          letterSpacing="8"
+        <svg
+          width="70%"
+          viewBox="0 0 1200 300"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          AERO FIX
-        </text>
-      </svg>
-    </div>
+          <text
+            x="50%"
+            y="50%"
+            dominantBaseline="middle"
+            textAnchor="middle"
+            fontSize="80"
+            fontWeight="700"
+            className="char"
+            stroke="#0ea5e9" // Sky blue stroke
+            fill="transparent"
+            letterSpacing="8"
+          >
+            AIRO FIX
+          </text>
+        </svg>
+      </div>
+    </main>
   );
 }

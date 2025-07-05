@@ -3,9 +3,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
-::-webkit-scrollbar {
-    display: none;
-}
+/*::-webkit-scrollbar {*/
+/*    display: none;*/
+/*}*/
 
 @theme inline {
     --color-background: var(--background);
@@ -127,7 +127,7 @@
 
 @layer utilities {
     .flex-center {
-        @apply flex items-center justify-center text-sky-500;
+        @apply flex items-center justify-center;
     }
 }
 
