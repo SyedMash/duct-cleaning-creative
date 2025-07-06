@@ -26,82 +26,85 @@ const Images = () => {
   };
 
   useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#image-container",
-        start: "0% 0%",
-        end: "700% 0%",
-        scrub: true,
-        pin: true,
-        // markers: true,
-      },
-    });
+    const mm = gsap.matchMedia()
+    mm.add("(min-width: 1024px)", () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#image-container",
+          start: "0% 0%",
+          end: "700% 0%",
+          scrub: true,
+          pin: true,
+          // markers: true,
+        },
+      });
 
-    tl.to(
-      { frame: 0 },
-      {
-        frame: totalFrames - 1,
-        ease: "none",
-        onUpdate: function () {
-          const frameIndex = Math.round(this.targets()[0].frame);
-          if (imageRef.current) {
-            imageRef.current.src = imagePath(frameIndex + 1);
-          }
-        },
-      },
-    )
-      .from(
-        ".germsText",
-        {
-          opacity: 0,
-          y: 100,
-          ease: "power4.out",
-        },
-        0,
-      )
-      .to(
-        ".blackDiv",
-        {
-          opacity: 1,
-        },
-        "-=0.1",
-      )
-      .to(".soDiv", {
-        opacity: 1,
-      })
-      .to(".partyDiv", {
-        opacity: 1,
-      })
-      .to(".secondImageContainer", {
-        opacity: 1,
-      })
-      .to(
+      tl.to(
         { frame: 0 },
         {
-          frame: secondTotalFrames - 1,
+          frame: totalFrames - 1,
           ease: "none",
           onUpdate: function () {
             const frameIndex = Math.round(this.targets()[0].frame);
-            if (secondImageRef.current) {
-              secondImageRef.current.src = secondImagePath(frameIndex + 1);
+            if (imageRef.current) {
+              imageRef.current.src = imagePath(frameIndex + 1);
             }
           },
         },
       )
-      .to(
-        ".ctaDiv",
-        {
+        .from(
+          ".germsText",
+          {
+            opacity: 0,
+            y: 100,
+            ease: "power4.out",
+          },
+          0,
+        )
+        .to(
+          ".blackDiv",
+          {
+            opacity: 1,
+          },
+          "-=0.1",
+        )
+        .to(".soDiv", {
           opacity: 1,
-          scale: 1,
-        },
-        "-=0.1",
-      );
+        })
+        .to(".partyDiv", {
+          opacity: 1,
+        })
+        .to(".secondImageContainer", {
+          opacity: 1,
+        })
+        .to(
+          { frame: 0 },
+          {
+            frame: secondTotalFrames - 1,
+            ease: "none",
+            onUpdate: function () {
+              const frameIndex = Math.round(this.targets()[0].frame);
+              if (secondImageRef.current) {
+                secondImageRef.current.src = secondImagePath(frameIndex + 1);
+              }
+            },
+          },
+        )
+        .to(
+          ".ctaDiv",
+          {
+            opacity: 1,
+            scale: 1,
+          },
+          "-=0.1",
+        );
+    })
   }, []);
 
   return (
     <div
       id="image-container"
-      className="relative h-screen w-full overflow-hidden"
+      className="relative h-fit pt-24 lg:pt-0 lg:h-screen w-full overflow-hidden"
     >
       <div
         className={
@@ -125,7 +128,7 @@ const Images = () => {
 
       <div
         className={
-          "bg-brand-black blackDiv flex-center absolute inset-0 size-full px-4 opacity-0"
+          "bg-brand-black blackDiv flex-center absolute inset-0 size-full px-4 lg:opacity-0"
         }
       >
         <p
