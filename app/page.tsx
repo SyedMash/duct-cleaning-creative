@@ -1,21 +1,19 @@
 "use client";
 
-import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Loader from "@/components/LoadingAnimation";
-import React, { useEffect, useState } from "react";
-import Bounded from "@/components/Bounded";
+import React, { useState } from "react";
 import CustomButton from "@/components/CustomButton/CustomButton";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Works from "@/components/Works";
+import Services from "@/components/Services";
+import Images from "@/components/ScrollImage";
 
 gsap.registerPlugin(SplitText, useGSAP, ScrollTrigger);
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
-
 
   useGSAP(() => {
     const introTl = gsap.timeline({
@@ -111,7 +109,8 @@ export default function Home() {
         </div>
       </section>
 
-      <Works />
+      <Images />
+      <Services />
 
       {/*<Bounded className={"gradientTextParent"}>*/}
       {/*  <p className="gradientText text-lg font-bold text-balance text-white/10 md:text-2xl lg:text-3xl xl:text-4xl">*/}
@@ -121,9 +120,6 @@ export default function Home() {
       {/*    workspace with our advanced, eco-friendly solutions.*/}
       {/*  </p>*/}
       {/*</Bounded>*/}
-
-
-      <div className={"h-screen"}></div>
     </main>
   );
 }
