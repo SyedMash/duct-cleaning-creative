@@ -20,7 +20,7 @@ const Services = () => {
       scrollTrigger: {
         trigger: ".serviceParentContainer",
         start: "top 50%",
-        markers: true,
+        // markers: true,
       },
     });
 
