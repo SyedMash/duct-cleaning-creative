@@ -13,85 +13,103 @@ const Why = () => {
   const parentContainerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    gsap.to(".whyText", {
-      opacity: 1,
-      ease: "power4.out",
-      duration: 1,
-      scrollTrigger: {
-        trigger: parentContainerRef.current,
-        start: "top 60%",
-        // markers: true,
-      },
-    });
-
-    const tl = gsap.timeline({
-      defaults: {
+    const mm = gsap.matchMedia()
+    mm.add("(min-width: 1024px)", () => {
+      gsap.to(".whyText", {
+        opacity: 1,
         ease: "power4.out",
-        duration: 1.5,
-      },
-      scrollTrigger: {
-        trigger: parentContainerRef.current,
-        start: "0% 0%",
-        end: "500% 0%",
-        scrub: true,
-        pin: true,
-        markers: true,
-      },
-    });
-
-    tl.to(
-      ".card1",
-      {
-        top: "50%",
-      },
-      "c1",
-    )
-      // .to(
-      //   "body",
-      //   {
-      //     background: "#111117",
-      //   },
-      //   "c1",
-      // )
-      // .to(
-      //   ".headingText",
-      //   {
-      //     color: "white",
-      //   },
-      //   "c1",
-      // )
-      .to(".card2", {
-        top: "51%",
-      })
-      .to(".card3", {
-        top: "52%",
-      })
-      .to(".card4", {
-        top: "53%",
-      })
-      .to(".card5", {
-        top: "54%",
-      })
-      .to(".card5", {
-        width: "100vw",
-        height: "100vh",
-        borderRadius: "0%",
-        top: 0,
-        left: 0,
-        xPercent: 0,
-        yPercent: 0,
-        transform: "none",
+        duration: 1,
+        scrollTrigger: {
+          trigger: parentContainerRef.current,
+          start: "top 60%",
+          // markers: true,
+        },
       });
+
+      const tl = gsap.timeline({
+        defaults: {
+          ease: "power4.out",
+          duration: 1.5,
+        },
+        scrollTrigger: {
+          trigger: parentContainerRef.current,
+          start: "0% 0%",
+          end: "500% 0%",
+          scrub: true,
+          pin: true,
+          // markers: true,
+        },
+      });
+
+      tl.to(
+        ".card1",
+        {
+          top: "50%",
+        },
+        "c1",
+      )
+        // .to(
+        //   "body",
+        //   {
+        //     background: "#111117",
+        //   },
+        //   "c1",
+        // )
+        // .to(
+        //   ".headingText",
+        //   {
+        //     color: "white",
+        //   },
+        //   "c1",
+        // )
+        .to(".card2", {
+          top: "51%",
+        })
+        .to(".card3", {
+          top: "52%",
+        })
+        .to(".card4", {
+          top: "53%",
+        })
+        .to(".card5", {
+          top: "54%",
+        })
+        .to(".card5", {
+          width: "100vw",
+          height: "100vh",
+          borderRadius: "0%",
+          top: 0,
+          left: 0,
+          xPercent: 0,
+          yPercent: 0,
+          transform: "none",
+        });
+    })
+
+    mm.add("(max-width: 1024px)", () => {
+      gsap.to(".whyElement", {
+        opacity: 1,
+        ease: "power4.out",
+        duration: 1,
+        stagger: 0.25,
+        scrollTrigger: {
+          trigger: parentContainerRef.current,
+          start: "top 60%",
+          // markers: true
+        }
+      })
+    })
+
   }, []);
 
   return (
     <section
-      className={"text-brand-black relative h-screen overflow-hidden py-12"}
+      className={"text-brand-black relative min-h-screen lg:h-screen gird grid-cols-1 gap-6 overflow-hidden px-4 py-12"}
       ref={parentContainerRef}
     >
       <h1
         className={
-          "font-manrope serviceText whyText headingText text-center text-3xl font-semibold capitalize opacity-0 md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl"
+          "font-manrope whyElement serviceText whyText headingText text-center text-3xl font-semibold capitalize opacity-0 md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl"
         }
       >
         WHY AIRO <span className={"text-sky-500"}>FIX</span>?
@@ -99,7 +117,7 @@ const Why = () => {
 
       <div
         className={
-          "card1 absolute top-[190vh] left-2/4 h-[70vh] w-[80vw] -translate-x-2/4 -translate-y-2/4 transform overflow-hidden rounded-2xl"
+          "card1 whyElement opacity-0 lg:opacity-100 lg:absolute relative h-48 my-6 lg:my-0 lg:top-[190vh] lg:left-2/4 lg:h-[70vh] lg:w-[80vw] lg:-translate-x-2/4 lg:-translate-y-2/4 lg:transform overflow-hidden rounded-2xl"
         }
       >
         <Image
@@ -115,12 +133,12 @@ const Why = () => {
         >
           <h1
             className={
-              "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
+              "font-manrope serviceText whyText text-center text-xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
             }
           >
             What Sets Us Apart
           </h1>
-          <p className={"max-w-5xl text-center text-balance md:text-lg"}>
+          <p className={"max-w-5xl text-center text-balance text-sm md:text-lg"}>
             We use high-grade tools and industry-proven techniques to deliver
             deep, lasting duct cleaning not surface-level dusting. It’s
             precision that shows in every breath.
@@ -129,7 +147,7 @@ const Why = () => {
       </div>
       <div
         className={
-          "card2 absolute top-[190vh] left-2/4 h-[70vh] w-[80vw] -translate-x-2/4 -translate-y-2/4 transform overflow-hidden rounded-2xl"
+          "card2 whyElement opacity-0 lg:opacity-100 lg:absolute relative h-48 lg:top-[190vh] lg:left-2/4 lg:h-[70vh] lg:w-[80vw] lg:-translate-x-2/4 lg:-translate-y-2/4 lg:transform overflow-hidden rounded-2xl"
         }
       >
         <Image
@@ -145,12 +163,12 @@ const Why = () => {
         >
           <h1
             className={
-              "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
+              "font-manrope serviceText whyText text-center text-xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
             }
           >
             Eco-Friendly Methods
           </h1>
-          <p className={"max-w-5xl text-center text-balance md:text-lg"}>
+          <p className={"max-w-5xl text-center text-balance text-sm md:text-lg"}>
             Your health matters and so does the planet. We use non-toxic,
             eco-safe solutions that clean thoroughly without filling your space
             with harsh chemicals.
@@ -159,7 +177,7 @@ const Why = () => {
       </div>
       <div
         className={
-          "card3 absolute top-[190vh] left-2/4 h-[70vh] w-[80vw] -translate-x-2/4 -translate-y-2/4 transform rounded-2xl"
+          "card3 whyElement opacity-0 lg:opacity-100 lg:absolute lg:top-[190vh] relative h-48 overflow-hidden my-6 lg:my-0 lg:left-2/4 lg:h-[70vh] lg:w-[80vw] lg:-translate-x-2/4 lg:-translate-y-2/4 lg:transform rounded-2xl"
         }
       >
         <Image
@@ -175,12 +193,12 @@ const Why = () => {
         >
           <h1
             className={
-              "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
+              "font-manrope serviceText whyText text-center text-xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
             }
           >
             Certified Technicians
           </h1>
-          <p className={"max-w-5xl text-center text-balance md:text-lg"}>
+          <p className={"max-w-5xl text-center text-balance text-sm md:text-lg"}>
             Every technician is trained, certified, and background-checked.
             Expect professional service, respectful conduct, and results you can
             trust.
@@ -189,7 +207,7 @@ const Why = () => {
       </div>
       <div
         className={
-          "card4 absolute top-[190vh] left-2/4 h-[70vh] w-[80vw] -translate-x-2/4 -translate-y-2/4 transform rounded-2xl"
+          "card4 whyElement opacity-0 lg:opacity-100 lg:absolute relative my-6 lg:my-0 overflow-hidden h-48 lg:top-[190vh] lg:left-2/4 lg:h-[70vh] lg:w-[80vw] lg:-translate-x-2/4 lg:-translate-y-2/4 lg:transform rounded-2xl"
         }
       >
         <Image
@@ -205,12 +223,12 @@ const Why = () => {
         >
           <h1
             className={
-              "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
+              "font-manrope serviceText whyText text-center text-xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
             }
           >
             Our Promise
           </h1>
-          <p className={"max-w-5xl text-center text-balance md:text-lg"}>
+          <p className={"max-w-5xl text-center text-balance text-sm md:text-lg"}>
             We’re here to restore the air you live in. From the moment we arrive
             to the last vent cleaned, your comfort, safety, and satisfaction are
             our priority.
@@ -219,7 +237,7 @@ const Why = () => {
       </div>
       <div
         className={
-          "card5 absolute top-[190vh] left-2/4 h-[70vh] w-[80vw] -translate-x-2/4 -translate-y-2/4 transform overflow-hidden rounded-2xl"
+          "card5 whyElement opacity-0 lg:opacity-100 lg:absolute relative my-6 lg:my-0 h-48 lg:top-[190vh] lg:left-2/4 lg:h-[70vh] lg:w-[80vw] lg:-translate-x-2/4 lg:-translate-y-2/4 lg:transform overflow-hidden rounded-2xl"
         }
       >
         <Image
@@ -231,14 +249,14 @@ const Why = () => {
         <div className="bg-brand-black/50 text-brand-offwhite flex-center absolute inset-0 size-full flex-col backdrop-blur-[2px]">
           <h1
             className={
-              "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
+              "font-manrope serviceText whyText text-center text-xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
             }
           >
             Limited Time Offer
           </h1>
-          <p className={"max-w-5xl text-center text-balance md:text-lg"}>
+          <p className={"max-w-5xl text-center text-balance text-sm md:text-lg"}>
             Grab the limited time offer. Just for{" "}
-            <span className="text-brand-green font-manrope text-2xl font-bold">
+            <span className="text-brand-green font-manrope text-xl lg:text-2xl font-bold">
               $189
             </span>
           </p>
@@ -246,12 +264,12 @@ const Why = () => {
             <CustomButton
               text="Book Now"
               href="/book-service"
-              className="introElement font-manrope! text-sm!"
+              className="font-manrope! text-sm!"
             />
             <CustomButton
               text="CALL NOW"
               href="tel:+1234567890"
-              className="introElement font-manrope! text-sm!"
+              className="font-manrope! text-sm!"
             />
           </div>
         </div>
