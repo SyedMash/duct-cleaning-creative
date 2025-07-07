@@ -66,7 +66,7 @@ export default function Home() {
       <section className="bg-brand-black relative z-30 h-screen overflow-hidden">
         <div className="img-wrapper absolute inset-0 scale-110 transform opacity-0">
           <video
-            src="/videos/intro-vid.mp4"
+            src="/videos/offer.mp4"
             autoPlay={true}
             muted={true}
             loop={true}

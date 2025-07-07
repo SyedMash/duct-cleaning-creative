@@ -58,7 +58,7 @@ const Coverage = () => {
       ref={parentContainerRef}
     >
       <Image
-        src={"/images/usmap.png"}
+        src={"/images/frame_0011.png"}
         alt={"usmap"}
         fill={true}
         className={"usaMap scale-[500%] object-cover opacity-0"}
