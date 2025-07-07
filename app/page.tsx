@@ -62,7 +62,6 @@ export default function Home() {
 
   return (
     <main className="overflow-hidden">
-      {!isLoaded && <Loader onCompleted={() => setIsLoaded(true)} />}
       <section className="bg-brand-black relative z-30 h-screen overflow-hidden">
         <div className="img-wrapper absolute inset-0 scale-110 transform opacity-0">
           <video

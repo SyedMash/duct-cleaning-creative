@@ -6,7 +6,6 @@ import Smooth from "@/components/Smooth";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import { Toaster } from "@/components/ui/sonner";
-import GlobalLoader from "@/components/GlobalLoader";
 import Preloader from "@/components/PreLoader";
 
 const inter = Inter({
