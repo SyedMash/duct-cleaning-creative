@@ -29,11 +29,11 @@ const FaQs = () => {
   }, []);
 
   return (
-    <Bounded className={"text-brand-black parentContainerFAQs opacity-0"}>
+    <Bounded className={"text-brand-offwhite parentContainerFAQs opacity-0"}>
       <h1
         id={"faqs"}
         className={
-          "font-manrope text-brand-black text-center text-3xl font-semibold md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
+          "font-manrope text-brand-offwhite text-center text-3xl font-semibold md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
         }
       >
         FAQs

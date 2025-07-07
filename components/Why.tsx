@@ -104,7 +104,7 @@ const Why = () => {
   return (
     <section
       className={
-        "text-brand-black gird relative min-h-screen grid-cols-1 gap-6 overflow-hidden px-4 py-12 lg:h-screen"
+        "text-brand-offwhite gird relative min-h-screen grid-cols-1 gap-6 overflow-hidden px-4 py-12 lg:h-screen"
       }
       ref={parentContainerRef}
     >

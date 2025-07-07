@@ -3,15 +3,15 @@ import { createTransport } from "nodemailer";
 export const transporter = createTransport({
   service: "gmail",
   auth: {
-    user: process.env.EMAIL,
-    pass: process.env.EMAIL_PASS,
+    user: process.env.USER_EMAIL,
+    pass: process.env.USER_PASS,
   },
 });
 
 // Business email configuration
 export const businessMailOptions = {
-  from: process.env.EMAIL,
-  to: process.env.EMAIL,
+  from: process.env.USER_EMAIL,
+  to: process.env.USER_EMAIL,
 };
 
 // Create email templates

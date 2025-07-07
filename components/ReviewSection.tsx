@@ -27,7 +27,7 @@ const ReviewSection = () => {
     <Bounded className="parentContainer opacity-0">
       <h1
         className={
-          "font-manrope text-brand-black text-center text-3xl font-semibold md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
+          "font-manrope text-brand-offwhite text-center text-3xl font-semibold md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
         }
       >
         Real Stories. Real Results.

@@ -26,17 +26,17 @@ const Coverage = () => {
       },
     });
 
-    gsap.to("body", {
-      background: "#fdfcf3",
-      duration: 1,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: parentContainerRef.current,
-        start: "-30% 80%",
-        scrub: true,
-        // markers: true,
-      },
-    });
+    // gsap.to("body", {
+    //   background: "#fdfcf3",
+    //   duration: 1,
+    //   ease: "power4.out",
+    //   scrollTrigger: {
+    //     trigger: parentContainerRef.current,
+    //     start: "-30% 80%",
+    //     scrub: true,
+    //     // markers: true,
+    //   },
+    // });
 
     tl.to(".usaMap", {
       opacity: 1,
