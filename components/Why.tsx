@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import CustomButton from "./CustomButton/CustomButton";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -151,7 +152,7 @@ const Why = () => {
       </div>
       <div
         className={
-          "card5 flex-center absolute top-[190vh] left-2/4 h-[70vh] w-[80vw] -translate-x-2/4 -translate-y-2/4 transform flex-col overflow-hidden rounded-2xl"
+          "card5 absolute top-[190vh] left-2/4 h-[70vh] w-[80vw] -translate-x-2/4 -translate-y-2/4 transform overflow-hidden rounded-2xl"
         }
       >
         <Image
@@ -160,18 +161,30 @@ const Why = () => {
           fill={true}
           className={"object-cover"}
         />
-        <h1
-          className={
-            "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
-          }
-        >
-          Our Promise
-        </h1>
-        <p className={"max-w-5xl text-center text-balance md:text-lg"}>
-          We’re here to restore the air you live in. From the moment we arrive
-          to the last vent cleaned, your comfort, safety, and satisfaction are
-          our priority.
-        </p>
+        <div className="absolute inset-0 size-full bg-brand-black/50 backdrop-blur-[2px] text-brand-offwhite flex-center flex-col">
+          <h1
+            className={
+              "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
+            }
+          >
+            Limited Time Offer
+          </h1>
+          <p className={"max-w-5xl text-center text-balance md:text-lg"}>
+            Grab the limited time offer. Just for <span className="text-brand-green font-bold font-manrope text-2xl">$189</span>
+          </p>
+          <div className="flex items-center gap-6 mt-6 overflow-hidden">
+            <CustomButton
+              text="Book Now"
+              href="/book-service"
+              className="introElement font-manrope! text-sm!"
+            />
+            <CustomButton
+              text="CALL NOW"
+              href="tel:+1234567890"
+              className="introElement font-manrope! text-sm!"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
