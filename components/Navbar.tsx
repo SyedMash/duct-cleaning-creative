@@ -106,7 +106,7 @@ const Navbar = () => {
       ref={parentContainerRef}
     >
       <nav className={"z-50 flex items-center justify-between p-12"}>
-        <h1 className={"font-manrope text-3xl font-semibold mix-blend-color-dodge"}>
+        <h1 className={"font-manrope text-3xl font-semibold"}>
           AIRO <span className={"text-brand-green"}>FIX</span>
         </h1>
         <h1

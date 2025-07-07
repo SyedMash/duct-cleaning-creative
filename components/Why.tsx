@@ -32,16 +32,34 @@ const Why = () => {
       scrollTrigger: {
         trigger: parentContainerRef.current,
         start: "0% 0%",
-        end: "200% 0%",
+        end: "500% 0%",
         scrub: true,
         pin: true,
         markers: true,
       },
     });
 
-    tl.to(".card1", {
-      top: "50%",
-    })
+    tl.to(
+      ".card1",
+      {
+        top: "50%",
+      },
+      "c1",
+    )
+      // .to(
+      //   "body",
+      //   {
+      //     background: "#111117",
+      //   },
+      //   "c1",
+      // )
+      // .to(
+      //   ".headingText",
+      //   {
+      //     color: "white",
+      //   },
+      //   "c1",
+      // )
       .to(".card2", {
         top: "51%",
       })
@@ -73,7 +91,7 @@ const Why = () => {
     >
       <h1
         className={
-          "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize opacity-0 md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl"
+          "font-manrope serviceText whyText headingText text-center text-3xl font-semibold capitalize opacity-0 md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl"
         }
       >
         WHY AIRO <span className={"text-sky-500"}>FIX</span>?
@@ -81,74 +99,123 @@ const Why = () => {
 
       <div
         className={
-          "card1 bg-brand-black/10 flex-center absolute top-[190vh] left-2/4 h-[70vh] w-[80vw] -translate-x-2/4 -translate-y-2/4 transform flex-col gap-4 rounded-2xl backdrop-blur-3xl"
+          "card1 absolute top-[190vh] left-2/4 h-[70vh] w-[80vw] -translate-x-2/4 -translate-y-2/4 transform overflow-hidden rounded-2xl"
         }
       >
-        <h1
+        <Image
+          src={"/images/apart.png"}
+          alt={"apart"}
+          fill={true}
+          className={"object-cover object-top"}
+        />
+        <div
           className={
-            "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
+            "bg-brand-black/50 text-brand-offwhite flex-center absolute inset-0 size-full flex-col backdrop-blur-[2px]"
           }
         >
-          What Sets Us Apart
-        </h1>
-        <p className={"max-w-5xl text-center text-balance md:text-lg"}>
-          We use high-grade tools and industry-proven techniques to deliver
-          deep, lasting duct cleaning not surface-level dusting. It’s precision
-          that shows in every breath.
-        </p>
+          <h1
+            className={
+              "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
+            }
+          >
+            What Sets Us Apart
+          </h1>
+          <p className={"max-w-5xl text-center text-balance md:text-lg"}>
+            We use high-grade tools and industry-proven techniques to deliver
+            deep, lasting duct cleaning not surface-level dusting. It’s
+            precision that shows in every breath.
+          </p>
+        </div>
       </div>
       <div
         className={
-          "card2 flex-center absolute top-[190vh] left-2/4 h-[70vh] w-[80vw] -translate-x-2/4 -translate-y-2/4 transform flex-col rounded-2xl bg-blue-400"
+          "card2 absolute top-[190vh] left-2/4 h-[70vh] w-[80vw] -translate-x-2/4 -translate-y-2/4 transform overflow-hidden rounded-2xl"
         }
       >
-        <h1
+        <Image
+          src={"/images/eco.png"}
+          alt={"apart"}
+          fill={true}
+          className={"object-cover"}
+        />
+        <div
           className={
-            "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
+            "bg-brand-black/50 text-brand-offwhite flex-center absolute inset-0 size-full flex-col backdrop-blur-[2px]"
           }
         >
-          Eco-Friendly Methods
-        </h1>
-        <p className={"max-w-5xl text-center text-balance md:text-lg"}>
-          Your health matters and so does the planet. We use non-toxic, eco-safe
-          solutions that clean thoroughly without filling your space with harsh
-          chemicals.
-        </p>
+          <h1
+            className={
+              "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
+            }
+          >
+            Eco-Friendly Methods
+          </h1>
+          <p className={"max-w-5xl text-center text-balance md:text-lg"}>
+            Your health matters and so does the planet. We use non-toxic,
+            eco-safe solutions that clean thoroughly without filling your space
+            with harsh chemicals.
+          </p>
+        </div>
       </div>
       <div
         className={
-          "card3 flex-center absolute top-[190vh] left-2/4 h-[70vh] w-[80vw] -translate-x-2/4 -translate-y-2/4 transform flex-col rounded-2xl bg-blue-900"
+          "card3 absolute top-[190vh] left-2/4 h-[70vh] w-[80vw] -translate-x-2/4 -translate-y-2/4 transform rounded-2xl"
         }
       >
-        <h1
+        <Image
+          src={"/images/uni.png"}
+          alt={"apart"}
+          fill={true}
+          className={"object-cover"}
+        />
+        <div
           className={
-            "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
+            "bg-brand-black/50 text-brand-offwhite flex-center absolute inset-0 size-full flex-col backdrop-blur-[2px]"
           }
         >
-          Certified Technicians
-        </h1>
-        <p className={"max-w-5xl text-center text-balance md:text-lg"}>
-          Every technician is trained, certified, and background-checked. Expect
-          professional service, respectful conduct, and results you can trust.
-        </p>
+          <h1
+            className={
+              "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
+            }
+          >
+            Certified Technicians
+          </h1>
+          <p className={"max-w-5xl text-center text-balance md:text-lg"}>
+            Every technician is trained, certified, and background-checked.
+            Expect professional service, respectful conduct, and results you can
+            trust.
+          </p>
+        </div>
       </div>
       <div
         className={
-          "card4 flex-center absolute top-[190vh] left-2/4 h-[70vh] w-[80vw] -translate-x-2/4 -translate-y-2/4 transform flex-col rounded-2xl bg-purple-400"
+          "card4 absolute top-[190vh] left-2/4 h-[70vh] w-[80vw] -translate-x-2/4 -translate-y-2/4 transform rounded-2xl"
         }
       >
-        <h1
+        <Image
+          src={"/images/sleep.png"}
+          alt={"apart"}
+          fill={true}
+          className={"object-cover"}
+        />
+        <div
           className={
-            "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
+            "bg-brand-black/50 text-brand-offwhite flex-center absolute inset-0 size-full flex-col backdrop-blur-[2px]"
           }
         >
-          Our Promise
-        </h1>
-        <p className={"max-w-5xl text-center text-balance md:text-lg"}>
-          We’re here to restore the air you live in. From the moment we arrive
-          to the last vent cleaned, your comfort, safety, and satisfaction are
-          our priority.
-        </p>
+          <h1
+            className={
+              "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
+            }
+          >
+            Our Promise
+          </h1>
+          <p className={"max-w-5xl text-center text-balance md:text-lg"}>
+            We’re here to restore the air you live in. From the moment we arrive
+            to the last vent cleaned, your comfort, safety, and satisfaction are
+            our priority.
+          </p>
+        </div>
       </div>
       <div
         className={
@@ -161,7 +228,7 @@ const Why = () => {
           fill={true}
           className={"object-cover"}
         />
-        <div className="absolute inset-0 size-full bg-brand-black/50 backdrop-blur-[2px] text-brand-offwhite flex-center flex-col">
+        <div className="bg-brand-black/50 text-brand-offwhite flex-center absolute inset-0 size-full flex-col backdrop-blur-[2px]">
           <h1
             className={
               "font-manrope serviceText whyText text-center text-3xl font-semibold capitalize md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl"
@@ -170,9 +237,12 @@ const Why = () => {
             Limited Time Offer
           </h1>
           <p className={"max-w-5xl text-center text-balance md:text-lg"}>
-            Grab the limited time offer. Just for <span className="text-brand-green font-bold font-manrope text-2xl">$189</span>
+            Grab the limited time offer. Just for{" "}
+            <span className="text-brand-green font-manrope text-2xl font-bold">
+              $189
+            </span>
           </p>
-          <div className="flex items-center gap-6 mt-6 overflow-hidden">
+          <div className="mt-6 flex items-center gap-6 overflow-hidden">
             <CustomButton
               text="Book Now"
               href="/book-service"

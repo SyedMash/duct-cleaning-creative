@@ -11,6 +11,7 @@ import Services from "@/components/Services";
 import Images from "@/components/ScrollImage";
 import Coverage from "@/components/Coverage";
 import Why from "@/components/Why";
+import ReviewSection from "@/components/ReviewSection";
 
 gsap.registerPlugin(SplitText, useGSAP, ScrollTrigger);
 
@@ -115,8 +116,7 @@ export default function Home() {
       <Services />
       <Coverage />
       <Why />
-
-      <div className={"h-screen"}></div>
+      <ReviewSection />
 
       {/*<Bounded className={"gradientTextParent"}>*/}
       {/*  <p className="gradientText text-lg font-bold text-balance text-white/10 md:text-2xl lg:text-3xl xl:text-4xl">*/}
