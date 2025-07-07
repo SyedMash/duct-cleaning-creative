@@ -40,20 +40,20 @@ const Images = () => {
         },
       });
 
-      tl.to(
-        { frame: 0 },
-        {
-          frame: totalFrames - 1,
-          ease: "none",
-          onUpdate: function () {
-            const frameIndex = Math.round(this.targets()[0].frame);
-            if (imageRef.current) {
-              imageRef.current.src = imagePath(frameIndex + 1);
-            }
-          },
-        },
-      )
-        .from(
+      // tl.to(
+      //   { frame: 0 },
+      //   {
+      //     frame: totalFrames - 1,
+      //     ease: "none",
+      //     onUpdate: function () {
+      //       const frameIndex = Math.round(this.targets()[0].frame);
+      //       if (imageRef.current) {
+      //         imageRef.current.src = imagePath(frameIndex + 1);
+      //       }
+      //     },
+      //   },
+      // )
+        tl.from(
           ".germsText",
           {
             opacity: 0,
@@ -78,27 +78,27 @@ const Images = () => {
         .to(".secondImageContainer", {
           opacity: 1,
         })
-        .to(
-          { frame: 0 },
-          {
-            frame: secondTotalFrames - 1,
-            ease: "none",
-            onUpdate: function () {
-              const frameIndex = Math.round(this.targets()[0].frame);
-              if (secondImageRef.current) {
-                secondImageRef.current.src = secondImagePath(frameIndex + 1);
-              }
-            },
-          },
-        )
-        .to(
-          ".ctaDiv",
-          {
-            opacity: 1,
-            scale: 1,
-          },
-          "-=0.1",
-        );
+        // .to(
+        //   { frame: 0 },
+        //   {
+        //     frame: secondTotalFrames - 1,
+        //     ease: "none",
+        //     onUpdate: function () {
+        //       const frameIndex = Math.round(this.targets()[0].frame);
+        //       if (secondImageRef.current) {
+        //         secondImageRef.current.src = secondImagePath(frameIndex + 1);
+        //       }
+        //     },
+        //   },
+        // )
+        // .to(
+        //   ".ctaDiv",
+        //   {
+        //     opacity: 1,
+        //     scale: 1,
+        //   },
+        //   "-=0.1",
+        // );
     });
   }, []);
 
@@ -175,51 +175,54 @@ const Images = () => {
       <div
         className={"secondImageContainer absolute inset-0 size-full opacity-0"}
       >
-        <img
-          src={secondImagePath(1)}
-          alt="second-image"
-          className={"h-full w-full scale-125 object-cover"}
-          ref={secondImageRef}
+        <video
+          src="/videos/clean.mp4"
+          autoPlay={true}
+          loop={true}
+          muted={true}
+          preload={"auto"}
+          className={"size-full object-cover scale-125"}
         />
       </div>
 
-      <div
-        className={
-          "flex-center ctaDiv absolute inset-0 size-full scale-50 flex-col bg-transparent px-4 opacity-0"
-        }
-      >
-        <h1
-          className={
-            "font-manrope blackDivText max-w-4xl text-2xl font-semibold lg:text-3xl xl:text-5xl"
-          }
-        >
-          AIRO <span className={"text-brand-green"}>FIX</span>
-        </h1>
-        <p className={"my-4 max-w-6xl text-center text-balance md:text-lg"}>
-          Your home deserves more than just clean floors it deserves clean air.
-          Our certified duct cleaning service helps you breathe easier by
-          eliminating hidden contaminants with precision and care.
-        </p>
-        <div className="flex items-center gap-6 overflow-hidden">
-          <CustomButton
-            text="Book Now"
-            href="/book-service"
-            className="introElement font-manrope! text-sm!"
-          />
-          <CustomButton
-            text="CALL NOW"
-            href="tel:5405158283"
-            className="introElement font-manrope! text-sm!"
-          />
-        </div>
-      </div>
+      {/*<div*/}
+      {/*  className={*/}
+      {/*    "flex-center ctaDiv absolute inset-0 size-full scale-50 flex-col bg-transparent px-4 opacity-0"*/}
+      {/*  }*/}
+      {/*>*/}
+      {/*  <h1*/}
+      {/*    className={*/}
+      {/*      "font-manrope blackDivText max-w-4xl text-2xl font-semibold lg:text-3xl xl:text-5xl"*/}
+      {/*    }*/}
+      {/*  >*/}
+      {/*    AIRO <span className={"text-brand-green"}>FIX</span>*/}
+      {/*  </h1>*/}
+      {/*  <p className={"my-4 max-w-6xl text-center text-balance md:text-lg"}>*/}
+      {/*    Your home deserves more than just clean floors it deserves clean air.*/}
+      {/*    Our certified duct cleaning service helps you breathe easier by*/}
+      {/*    eliminating hidden contaminants with precision and care.*/}
+      {/*  </p>*/}
+      {/*  <div className="flex items-center gap-6 overflow-hidden">*/}
+      {/*    <CustomButton*/}
+      {/*      text="Book Now"*/}
+      {/*      href="/book-service"*/}
+      {/*      className="introElement font-manrope! text-sm!"*/}
+      {/*    />*/}
+      {/*    <CustomButton*/}
+      {/*      text="CALL NOW"*/}
+      {/*      href="tel:5405158283"*/}
+      {/*      className="introElement font-manrope! text-sm!"*/}
+      {/*    />*/}
+      {/*  </div>*/}
+      {/*</div>*/}
 
-      <img
-        ref={imageRef}
-        id="scroll-image"
-        src={imagePath(1)}
-        alt="Scroll Image"
-        className="h-full w-full object-cover"
+      <video
+        src="/videos/dance.mp4"
+        autoPlay={true}
+        loop={true}
+        muted={true}
+        preload={"auto"}
+        className={"size-full object-cover"}
       />
     </div>
   );
