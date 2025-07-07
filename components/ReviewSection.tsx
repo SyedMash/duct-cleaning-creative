@@ -1,16 +1,15 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import { ReviewCard } from "@/components/ReviewCard";
 import Bounded from "@/components/Bounded";
-import gsap from "gsap"
+import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const ReviewSection = () => {
-
-
   useGSAP(() => {
     gsap.to(".parentContainer", {
       opacity: 1,
@@ -20,15 +19,15 @@ const ReviewSection = () => {
         trigger: ".parentContainer",
         start: "top 80%",
         // markers: true
-      }
-    })
-  }, [])
+      },
+    });
+  }, []);
 
   return (
     <Bounded className="parentContainer opacity-0">
       <h1
         className={
-          "font-manrope introElement text-center text-3xl font-semibold md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-brand-black"
+          "font-manrope text-brand-black text-center text-3xl font-semibold md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
         }
       >
         Real Stories. Real Results.

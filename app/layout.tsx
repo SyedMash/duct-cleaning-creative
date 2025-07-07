@@ -3,6 +3,9 @@ import { Inter, Manrope, Fira_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Smooth from "@/components/Smooth";
+import Footer from "@/components/Footer";
+import ScrollTop from "@/components/ScrollTop";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -40,6 +43,9 @@ export default function RootLayout({
         <Smooth>
           <Navbar />
           {children}
+          <Toaster />
+          <ScrollTop />
+          <Footer />
         </Smooth>
       </body>
     </html>

@@ -13,7 +13,7 @@ const Why = () => {
   const parentContainerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    const mm = gsap.matchMedia()
+    const mm = gsap.matchMedia();
     mm.add("(min-width: 1024px)", () => {
       gsap.to(".whyText", {
         opacity: 1,
@@ -84,7 +84,7 @@ const Why = () => {
           yPercent: 0,
           transform: "none",
         });
-    })
+    });
 
     mm.add("(max-width: 1024px)", () => {
       gsap.to(".whyElement", {
@@ -96,15 +96,16 @@ const Why = () => {
           trigger: parentContainerRef.current,
           start: "top 60%",
           // markers: true
-        }
-      })
-    })
-
+        },
+      });
+    });
   }, []);
 
   return (
     <section
-      className={"text-brand-black relative min-h-screen lg:h-screen gird grid-cols-1 gap-6 overflow-hidden px-4 py-12"}
+      className={
+        "text-brand-black gird relative min-h-screen grid-cols-1 gap-6 overflow-hidden px-4 py-12 lg:h-screen"
+      }
       ref={parentContainerRef}
     >
       <h1
@@ -117,7 +118,7 @@ const Why = () => {
 
       <div
         className={
-          "card1 whyElement opacity-0 lg:opacity-100 lg:absolute relative h-48 my-6 lg:my-0 lg:top-[190vh] lg:left-2/4 lg:h-[70vh] lg:w-[80vw] lg:-translate-x-2/4 lg:-translate-y-2/4 lg:transform overflow-hidden rounded-2xl"
+          "card1 whyElement relative my-6 h-48 overflow-hidden rounded-2xl opacity-0 lg:absolute lg:top-[190vh] lg:left-2/4 lg:my-0 lg:h-[70vh] lg:w-[80vw] lg:-translate-x-2/4 lg:-translate-y-2/4 lg:transform lg:opacity-100"
         }
       >
         <Image
@@ -138,7 +139,9 @@ const Why = () => {
           >
             What Sets Us Apart
           </h1>
-          <p className={"max-w-5xl text-center text-balance text-sm md:text-lg"}>
+          <p
+            className={"max-w-5xl text-center text-sm text-balance md:text-lg"}
+          >
             We use high-grade tools and industry-proven techniques to deliver
             deep, lasting duct cleaning not surface-level dusting. It’s
             precision that shows in every breath.
@@ -147,7 +150,7 @@ const Why = () => {
       </div>
       <div
         className={
-          "card2 whyElement opacity-0 lg:opacity-100 lg:absolute relative h-48 lg:top-[190vh] lg:left-2/4 lg:h-[70vh] lg:w-[80vw] lg:-translate-x-2/4 lg:-translate-y-2/4 lg:transform overflow-hidden rounded-2xl"
+          "card2 whyElement relative h-48 overflow-hidden rounded-2xl opacity-0 lg:absolute lg:top-[190vh] lg:left-2/4 lg:h-[70vh] lg:w-[80vw] lg:-translate-x-2/4 lg:-translate-y-2/4 lg:transform lg:opacity-100"
         }
       >
         <Image
@@ -168,7 +171,9 @@ const Why = () => {
           >
             Eco-Friendly Methods
           </h1>
-          <p className={"max-w-5xl text-center text-balance text-sm md:text-lg"}>
+          <p
+            className={"max-w-5xl text-center text-sm text-balance md:text-lg"}
+          >
             Your health matters and so does the planet. We use non-toxic,
             eco-safe solutions that clean thoroughly without filling your space
             with harsh chemicals.
@@ -177,7 +182,7 @@ const Why = () => {
       </div>
       <div
         className={
-          "card3 whyElement opacity-0 lg:opacity-100 lg:absolute lg:top-[190vh] relative h-48 overflow-hidden my-6 lg:my-0 lg:left-2/4 lg:h-[70vh] lg:w-[80vw] lg:-translate-x-2/4 lg:-translate-y-2/4 lg:transform rounded-2xl"
+          "card3 whyElement relative my-6 h-48 overflow-hidden rounded-2xl opacity-0 lg:absolute lg:top-[190vh] lg:left-2/4 lg:my-0 lg:h-[70vh] lg:w-[80vw] lg:-translate-x-2/4 lg:-translate-y-2/4 lg:transform lg:opacity-100"
         }
       >
         <Image
@@ -198,7 +203,9 @@ const Why = () => {
           >
             Certified Technicians
           </h1>
-          <p className={"max-w-5xl text-center text-balance text-sm md:text-lg"}>
+          <p
+            className={"max-w-5xl text-center text-sm text-balance md:text-lg"}
+          >
             Every technician is trained, certified, and background-checked.
             Expect professional service, respectful conduct, and results you can
             trust.
@@ -207,7 +214,7 @@ const Why = () => {
       </div>
       <div
         className={
-          "card4 whyElement opacity-0 lg:opacity-100 lg:absolute relative my-6 lg:my-0 overflow-hidden h-48 lg:top-[190vh] lg:left-2/4 lg:h-[70vh] lg:w-[80vw] lg:-translate-x-2/4 lg:-translate-y-2/4 lg:transform rounded-2xl"
+          "card4 whyElement relative my-6 h-48 overflow-hidden rounded-2xl opacity-0 lg:absolute lg:top-[190vh] lg:left-2/4 lg:my-0 lg:h-[70vh] lg:w-[80vw] lg:-translate-x-2/4 lg:-translate-y-2/4 lg:transform lg:opacity-100"
         }
       >
         <Image
@@ -228,7 +235,9 @@ const Why = () => {
           >
             Our Promise
           </h1>
-          <p className={"max-w-5xl text-center text-balance text-sm md:text-lg"}>
+          <p
+            className={"max-w-5xl text-center text-sm text-balance md:text-lg"}
+          >
             We’re here to restore the air you live in. From the moment we arrive
             to the last vent cleaned, your comfort, safety, and satisfaction are
             our priority.
@@ -237,7 +246,7 @@ const Why = () => {
       </div>
       <div
         className={
-          "card5 whyElement opacity-0 lg:opacity-100 lg:absolute relative my-6 lg:my-0 h-48 lg:top-[190vh] lg:left-2/4 lg:h-[70vh] lg:w-[80vw] lg:-translate-x-2/4 lg:-translate-y-2/4 lg:transform overflow-hidden rounded-2xl"
+          "card5 whyElement relative my-6 h-48 overflow-hidden rounded-2xl opacity-0 lg:absolute lg:top-[190vh] lg:left-2/4 lg:my-0 lg:h-[70vh] lg:w-[80vw] lg:-translate-x-2/4 lg:-translate-y-2/4 lg:transform lg:opacity-100"
         }
       >
         <Image
@@ -254,9 +263,11 @@ const Why = () => {
           >
             Limited Time Offer
           </h1>
-          <p className={"max-w-5xl text-center text-balance text-sm md:text-lg"}>
+          <p
+            className={"max-w-5xl text-center text-sm text-balance md:text-lg"}
+          >
             Grab the limited time offer. Just for{" "}
-            <span className="text-brand-green font-manrope text-xl lg:text-2xl font-bold">
+            <span className="text-brand-green font-manrope text-xl font-bold lg:text-2xl">
               $189
             </span>
           </p>
@@ -268,7 +279,7 @@ const Why = () => {
             />
             <CustomButton
               text="CALL NOW"
-              href="tel:+1234567890"
+              href="tel:5405158283"
               className="font-manrope! text-sm!"
             />
           </div>

@@ -12,6 +12,7 @@ import Images from "@/components/ScrollImage";
 import Coverage from "@/components/Coverage";
 import Why from "@/components/Why";
 import ReviewSection from "@/components/ReviewSection";
+import FaQs from "@/components/FAQs";
 
 gsap.registerPlugin(SplitText, useGSAP, ScrollTrigger);
 
@@ -105,18 +106,19 @@ export default function Home() {
             />
             <CustomButton
               text="CALL NOW"
-              href="tel:+1234567890"
+              href="tel:5405158283"
               className="introElement font-manrope! text-sm!"
             />
           </div>
         </div>
       </section>
 
-      {/* <Images /> */}
+      <Images />
       <Services />
       <Coverage />
       <Why />
       <ReviewSection />
+      <FaQs />
 
       {/*<Bounded className={"gradientTextParent"}>*/}
       {/*  <p className="gradientText text-lg font-bold text-balance text-white/10 md:text-2xl lg:text-3xl xl:text-4xl">*/}

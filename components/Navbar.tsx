@@ -9,6 +9,7 @@ import { clsx } from "clsx";
 import { IoMenuSharp } from "react-icons/io5";
 import { RiCloseLargeLine } from "react-icons/ri";
 import { useScroll } from "@/hooks/useScroll";
+import Link from "next/link";
 
 gsap.registerPlugin(useGSAP);
 
@@ -154,7 +155,9 @@ const Navbar = () => {
           }
         >
           {navLinks.map((link) => (
-            <h1
+            <Link
+              onClick={handleNavbar}
+              href={link.link}
               key={link.name}
               className={
                 "font-fira hover:text-brand-green w-fit cursor-pointer text-2xl leading-[50px] font-semibold transition-all duration-700 md:text-4xl md:leading-[100px] xl:text-5xl 2xl:text-8xl"
@@ -165,7 +168,7 @@ const Navbar = () => {
               onMouseLeave={handleMouseLeave}
             >
               {link.name}
-            </h1>
+            </Link>
           ))}
         </div>
       </section>

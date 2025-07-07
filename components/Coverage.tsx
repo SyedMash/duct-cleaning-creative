@@ -53,6 +53,7 @@ const Coverage = () => {
 
   return (
     <section
+      id={"coverage"}
       className={"text-brand-black relative h-[120vh] overflow-hidden"}
       ref={parentContainerRef}
     >

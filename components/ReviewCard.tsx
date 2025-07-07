@@ -21,44 +21,44 @@ export function ReviewCard({ direction = "left" }: ReviewCardProps) {
 const testimonials = [
   {
     quote:
-      "Fast, professional, and affordable! My garage door was stuck, and they fixed it within an hour. Highly recommend!",
-    name: "John D.",
+      "I had no idea how dirty our ducts were until AiroFix showed us. The air feels cleaner, and my allergies are way better now.",
+    name: "Sophia R.",
     title: "Homeowner, Dallas TX",
   },
   {
     quote:
-      "Excellent service! The technician arrived on time and explained everything clearly before fixing my garage door.",
-    name: "Sarah M.",
-    title: "Homeowner, Plano TX",
+      "Top-notch service! The tech arrived on time, explained every step, and left my home spotless after the duct cleaning.",
+    name: "James H.",
+    title: "Homeowner, Denver CO",
   },
   {
     quote:
-      "Super friendly team and reasonable prices. They even helped me choose a better garage door opener. Thank you!",
-    name: "Mike B.",
-    title: "Business Owner, Fort Worth TX",
+      "We manage multiple properties, and AiroFix is now our go-to for air duct cleaning. Fast, reliable, and super professional.",
+    name: "Lena V.",
+    title: "Property Manager, Phoenix AZ",
   },
   {
     quote:
-      "I called in the morning and by the afternoon my garage door was working perfectly. Amazing experience!",
-    name: "Lisa K.",
-    title: "Homeowner, Arlington TX",
+      "Our toddler was constantly sick — turns out our vents were full of mold. AiroFix cleaned them out and the difference is huge.",
+    name: "Brian T.",
+    title: "Homeowner, Orlando FL",
   },
   {
     quote:
-      "Highly professional and trustworthy. They didn't try to upsell unnecessary parts, just fixed what was needed.",
-    name: "David S.",
-    title: "Homeowner, Frisco TX",
+      "Smooth, respectful, and honest. They didn't try to sell anything extra — just did a solid, clean job. Highly recommend!",
+    name: "Aliyah M.",
+    title: "Homeowner, Seattle WA",
   },
   {
     quote:
-      "Smooth experience from start to finish. Scheduling was easy and the repair was quick!",
-    name: "Emma W.",
-    title: "Property Manager, Irving TX",
+      "Scheduling was easy, and the team arrived on time. Within hours our entire house felt fresher — amazing service.",
+    name: "Kevin G.",
+    title: "Homeowner, Chicago IL",
   },
   {
     quote:
-      "Best garage door service I've ever used. Honest, fast, and fairly priced. Will definitely use again!",
-    name: "Chris P.",
-    title: "Homeowner, McKinney TX",
+      "If you want fast, honest, and quality duct cleaning, go with AiroFix. They even showed me before-and-after photos!",
+    name: "Jasmine N.",
+    title: "Business Owner, Atlanta GA",
   },
 ];
