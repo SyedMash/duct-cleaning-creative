@@ -10,6 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Services from "@/components/Services";
 import Images from "@/components/ScrollImage";
 import Coverage from "@/components/Coverage";
+import Why from "@/components/Why";
 
 gsap.registerPlugin(SplitText, useGSAP, ScrollTrigger);
 
@@ -110,9 +111,10 @@ export default function Home() {
         </div>
       </section>
 
-      <Images />
+      {/*<Images />*/}
       <Services />
       <Coverage />
+      <Why />
 
       <div className={"h-screen"}></div>
 

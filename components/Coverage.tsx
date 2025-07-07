@@ -22,7 +22,7 @@ const Coverage = () => {
         start: "top 80%",
         end: "bottom 80%",
         scrub: true,
-        markers: true,
+        // markers: true,
       },
     });
 
@@ -53,7 +53,7 @@ const Coverage = () => {
 
   return (
     <section
-      className={"text-brand-black relative h-screen overflow-hidden"}
+      className={"text-brand-black relative h-[120vh] overflow-hidden"}
       ref={parentContainerRef}
     >
       <Image
@@ -67,7 +67,9 @@ const Coverage = () => {
           "font-manrope text-brand-offwhite coverHeading absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 transform text-3xl font-bold md:text-5xl lg:text-6xl"
         }
       >
-        COVERING US
+        COVERING <span className={"text-[#bf0a30]"}>U</span>
+        <span className={"text-[#f1f1f1]"}>S</span>
+        <span className={"text-[#002868]"}>A</span>
       </h1>
     </section>
   );
