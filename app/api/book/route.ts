@@ -30,11 +30,11 @@ export async function POST(req: NextRequest) {
   try {
     // Send confirmation email to customer
     await transporter.sendMail({
-      from: process.env.EMAIL,
+      from: process.env.USER_EMAIL,
       to: email,
       subject: "AIRO FIX - Booking Confirmation",
       html: createCustomerEmailTemplate(name, email, service),
-    });
+    }); 
 
     // Send notification email to business
     await transporter.sendMail({
