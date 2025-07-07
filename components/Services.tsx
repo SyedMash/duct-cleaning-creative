@@ -54,7 +54,7 @@ const Services = () => {
             }
           >
             <Image
-              src={"/images/home.png"}
+              src={"/images/frame_0005.png"}
               alt={"residential-image"}
               fill={true}
               className={"object-cover"}
@@ -83,7 +83,7 @@ const Services = () => {
             }
           >
             <Image
-              src={"/images/office.png"}
+              src={"/images/frame_0007.png"}
               alt={"residential-image"}
               fill={true}
               className={"object-cover"}
@@ -113,7 +113,7 @@ const Services = () => {
           }
         >
           <Image
-            src={"/images/home.png"}
+            src={"/images/frame_0005.png"}
             alt={"residential-image"}
             fill={true}
             className={"object-cover"}

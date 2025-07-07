@@ -113,7 +113,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Images />
+      {/*<Images />*/}
       <Services />
       <Coverage />
       <Why />

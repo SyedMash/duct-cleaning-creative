@@ -122,7 +122,7 @@ const Why = () => {
         }
       >
         <Image
-          src={"/images/apart.png"}
+          src={"/images/frame_0002.png"}
           alt={"apart"}
           fill={true}
           className={"object-cover object-top"}
@@ -154,7 +154,7 @@ const Why = () => {
         }
       >
         <Image
-          src={"/images/eco.png"}
+          src={"/images/frame_0004.png"}
           alt={"apart"}
           fill={true}
           className={"object-cover"}
@@ -186,7 +186,7 @@ const Why = () => {
         }
       >
         <Image
-          src={"/images/uni.png"}
+          src={"/images/frame_0010.png"}
           alt={"apart"}
           fill={true}
           className={"object-cover"}
@@ -218,7 +218,7 @@ const Why = () => {
         }
       >
         <Image
-          src={"/images/sleep.png"}
+          src={"/images/frame_0009.png"}
           alt={"apart"}
           fill={true}
           className={"object-cover"}
@@ -250,7 +250,7 @@ const Why = () => {
         }
       >
         <Image
-          src={"/images/offer.jpg"}
+          src={"/images/frame_0006.jpg"}
           alt={"offer"}
           fill={true}
           className={"object-cover"}
