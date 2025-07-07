@@ -2,9 +2,6 @@ import React from "react";
 import CustomButton from "@/components/CustomButton/CustomButton";
 import {
   FaFacebookF,
-  FaXTwitter,
-  FaInstagram,
-  FaGoogle,
 } from "react-icons/fa6";
 import Link from "next/link";
 
@@ -30,8 +27,8 @@ const Footer = () => {
         </div>
         OR
         <CustomButton
-          text={"Chat With AIRO FIX Ai"}
-          href={"/chat"}
+          text={"Airo Fix Ai"}
+          href={"/"}
           className={"bg-brand-black! font-manrope! text-sm!"}
         />
       </div>

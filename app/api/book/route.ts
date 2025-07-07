@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
       to: email,
       subject: "AIRO FIX - Booking Confirmation",
       html: createCustomerEmailTemplate(name, email, service),
-    }); 
+    });
 
     // Send notification email to business
     await transporter.sendMail({

@@ -4,14 +4,14 @@ import Link from "next/link";
 import clsx from "clsx";
 
 interface CustomButtonProps {
-  text: string
-  href: string
-  className?:string
+  text: string;
+  href: string;
+  className?: string;
 }
 
-const CustomButton = ({ text,href,className }: CustomButtonProps) => {
+const CustomButton = ({ text, href, className }: CustomButtonProps) => {
   return (
-    <Link href={href} className={clsx("btn-17",className)}>
+    <Link href={href} className={clsx("btn-17", className)}>
       <span className="text-container">
         <span className="text">{text}</span>
       </span>

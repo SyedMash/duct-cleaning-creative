@@ -100,7 +100,7 @@ export default function Home() {
           <div className="flex items-center gap-6 overflow-hidden">
             <CustomButton
               text="Book Now"
-              href="/book-service"
+              href="/book"
               className="introElement font-manrope! text-sm!"
             />
             <CustomButton

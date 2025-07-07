@@ -11,6 +11,13 @@ export const metadata: Metadata = {
 const Page = () => {
   return (
     <Bounded className={"pt-32"}>
+      <h1
+        className={
+          "font-manrope introElement mb-12 text-3xl font-semibold md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"
+        }
+      >
+        Book A Service
+      </h1>
       <BookingForm />
     </Bounded>
   );

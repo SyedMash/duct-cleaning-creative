@@ -274,7 +274,7 @@ const Why = () => {
           <div className="mt-6 flex items-center gap-6 overflow-hidden">
             <CustomButton
               text="Book Now"
-              href="/book-service"
+              href="/book"
               className="font-manrope! text-sm!"
             />
             <CustomButton
