@@ -22,11 +22,11 @@ const Images = () => {
 
   const secondImagePath = (index: number) => {
     const paddedIndex = String(index).padStart(4, "0");
-    return `/images/cleanFrames/frame_${paddedIndex}.jpg`;
+    return `/images/clean-frames/frame_${paddedIndex}.jpg`;
   };
 
   useGSAP(() => {
-    const mm = gsap.matchMedia()
+    const mm = gsap.matchMedia();
     mm.add("(min-width: 1024px)", () => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -98,13 +98,13 @@ const Images = () => {
           },
           "-=0.1",
         );
-    })
+    });
   }, []);
 
   return (
     <div
       id="image-container"
-      className="relative h-fit pt-24 lg:pt-0 lg:h-screen w-full overflow-hidden"
+      className="relative h-fit w-full overflow-hidden pt-24 lg:h-screen lg:pt-0"
     >
       <div
         className={
