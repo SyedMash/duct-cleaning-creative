@@ -6,6 +6,7 @@ import Smooth from "@/components/Smooth";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import { Toaster } from "@/components/ui/sonner";
+import GlobalLoader from "@/components/GlobalLoader";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -42,6 +43,7 @@ export default function RootLayout({
       >
         <Smooth>
           <Navbar />
+          <GlobalLoader />
           {children}
           <Toaster />
           <ScrollTop />

@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const Images = () => {
   const imageRef = useRef<HTMLImageElement>(null);
   const secondImageRef = useRef<HTMLImageElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const totalFrames = 191;
   const secondTotalFrames = 221;
