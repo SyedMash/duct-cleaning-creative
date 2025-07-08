@@ -53,15 +53,15 @@ const Images = () => {
       //     },
       //   },
       // )
-        tl.from(
-          ".germsText",
-          {
-            opacity: 0,
-            y: 100,
-            ease: "power4.out",
-          },
-          0,
-        )
+      tl.from(
+        ".germsText",
+        {
+          opacity: 0,
+          y: 100,
+          ease: "power4.out",
+        },
+        0,
+      )
         .to(
           ".blackDiv",
           {
@@ -77,28 +77,28 @@ const Images = () => {
         })
         .to(".secondImageContainer", {
           opacity: 1,
-        })
-        // .to(
-        //   { frame: 0 },
-        //   {
-        //     frame: secondTotalFrames - 1,
-        //     ease: "none",
-        //     onUpdate: function () {
-        //       const frameIndex = Math.round(this.targets()[0].frame);
-        //       if (secondImageRef.current) {
-        //         secondImageRef.current.src = secondImagePath(frameIndex + 1);
-        //       }
-        //     },
-        //   },
-        // )
-        // .to(
-        //   ".ctaDiv",
-        //   {
-        //     opacity: 1,
-        //     scale: 1,
-        //   },
-        //   "-=0.1",
-        // );
+        });
+      // .to(
+      //   { frame: 0 },
+      //   {
+      //     frame: secondTotalFrames - 1,
+      //     ease: "none",
+      //     onUpdate: function () {
+      //       const frameIndex = Math.round(this.targets()[0].frame);
+      //       if (secondImageRef.current) {
+      //         secondImageRef.current.src = secondImagePath(frameIndex + 1);
+      //       }
+      //     },
+      //   },
+      // )
+      // .to(
+      //   ".ctaDiv",
+      //   {
+      //     opacity: 1,
+      //     scale: 1,
+      //   },
+      //   "-=0.1",
+      // );
     });
   }, []);
 
@@ -181,7 +181,7 @@ const Images = () => {
           loop={true}
           muted={true}
           preload={"auto"}
-          className={"size-full object-cover scale-125"}
+          className={"size-full scale-125 object-cover"}
         />
       </div>
 

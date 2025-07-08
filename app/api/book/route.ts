@@ -23,7 +23,17 @@ export async function POST(req: NextRequest) {
 
   console.log(body);
 
-  if (!name || !email || !service || !phone) {
+  if (
+    !name ||
+    !email ||
+    !service ||
+    !phone ||
+    !addressLine1 ||
+    !country ||
+    !city ||
+    !state ||
+    !postalCode
+  ) {
     return NextResponse.json({ message: "invalid fields" }, { status: 400 });
   }
 

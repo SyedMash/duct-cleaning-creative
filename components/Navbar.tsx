@@ -107,9 +107,15 @@ const Navbar = () => {
       ref={parentContainerRef}
     >
       <nav className={"z-50 flex items-center justify-between p-12"}>
-        <h1 className={"font-manrope text-3xl font-semibold"}>
-          AIRO <span className={"text-brand-green"}>FIX</span>
-        </h1>
+        <Link href={"/"}>
+          <Image
+            src={"/images/logo.png"}
+            alt={"logo"}
+            width={100}
+            height={100}
+            className={"object-contain"}
+          />
+        </Link>
         <h1
           onClick={handleNavbar}
           className={clsx(

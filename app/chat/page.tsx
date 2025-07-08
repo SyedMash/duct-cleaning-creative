@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const Page = () => {
   return (
-    <section className={"relative h-screen"}>
+    <section className={"relative min-h-screen"}>
       <Chat />
     </section>
   );
