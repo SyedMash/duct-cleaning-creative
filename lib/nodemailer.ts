@@ -68,7 +68,7 @@ export const createCustomerEmailTemplate = (
     <div class="container">
         <div class="header">
             <div class="logo">AIRO <span class="logo-highlight">FIX</span></div>
-            <p>Fast, Reliable Garage Door Solutions</p>
+            <p>Breathe in the Difference</p>
         </div>
         
         <div class="content">

@@ -125,6 +125,7 @@ const Why = () => {
           src={"/images/frame_0002.png"}
           alt={"apart"}
           fill={true}
+          priority={true}
           className={"object-cover object-top"}
         />
         <div
