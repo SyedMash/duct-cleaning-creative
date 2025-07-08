@@ -1,7 +1,7 @@
 export const navLinks = [
   { name: "Home", link: "/", imageUrl: "/images/frame_0005.png" },
   { name: "Blogs", link: "/blogs", imageUrl: "/images/blog.jpg" },
-  // { name: "Airo Fix Ai", link: "/chat", imageUrl: "/images/img2.jpg" },
+  { name: "Airo Fix Ai", link: "/chat", imageUrl: "/images/img2.jpg" },
   { name: "Book Service", link: "/book", imageUrl: "/images/frame_0008.jpg" },
   { name: "About Us", link: "/about", imageUrl: "/images/frame_0001.jpg" },
 ];

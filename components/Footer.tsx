@@ -1,8 +1,6 @@
 import React from "react";
 import CustomButton from "@/components/CustomButton/CustomButton";
-import {
-  FaFacebookF,
-} from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa6";
 import Link from "next/link";
 
 const Footer = () => {
@@ -28,7 +26,7 @@ const Footer = () => {
         OR
         <CustomButton
           text={"Airo Fix Ai"}
-          href={"/"}
+          href={"/chat"}
           className={"bg-brand-black! font-manrope! text-sm!"}
         />
       </div>
