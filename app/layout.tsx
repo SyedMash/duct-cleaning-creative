@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
 import { Toaster } from "@/components/ui/sonner";
 import Preloader from "@/components/PreLoader";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -61,6 +62,7 @@ export default function RootLayout({
           <Navbar />
           <Preloader />
           {children}
+          <GoogleAnalytics gaId="G-GPWQS979EH" />
           <Toaster />
           <ScrollTop />
           <Footer />
