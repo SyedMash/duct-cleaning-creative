@@ -8,7 +8,6 @@ import Image from "next/image";
 import { clsx } from "clsx";
 import { IoMenuSharp } from "react-icons/io5";
 import { RiCloseLargeLine } from "react-icons/ri";
-import { useScroll } from "@/hooks/useScroll";
 import Link from "next/link";
 
 gsap.registerPlugin(useGSAP);
@@ -17,10 +16,27 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [image, setImage] = useState<string>("");
   const [isHovered, setIsHovered] = useState(false);
+  const [enableNavbar, setEnableNavbar] = useState(true);
 
   const navigationSection = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const parentContainerRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < 500) {
+        setEnableNavbar(true);
+      } else {
+        setEnableNavbar(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleNavbar = () => {
     if (isOpen) {
@@ -106,7 +122,10 @@ const Navbar = () => {
       className={"fixed z-50 w-full overflow-hidden bg-transparent"}
       ref={parentContainerRef}
     >
-      <nav className={"z-50 flex items-center justify-between p-12"}>
+      <nav
+        className={"z-50 flex items-center justify-between p-12"}
+        style={{ display: enableNavbar ? "flex" : "none" }}
+      >
         <Link href={"/"}>
           <Image
             src={"/images/logo.png"}

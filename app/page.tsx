@@ -2,23 +2,21 @@
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import Loader from "@/components/LoadingAnimation";
-import React, { useState } from "react";
+
 import CustomButton from "@/components/CustomButton/CustomButton";
-import { SplitText } from "gsap/SplitText";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import Services from "@/components/Services";
 import Images from "@/components/ScrollImage";
 import Coverage from "@/components/Coverage";
 import Why from "@/components/Why";
 import ReviewSection from "@/components/ReviewSection";
 import FaQs from "@/components/FAQs";
+import MarqueeText from "@/components/Marquee";
+import Pricing from "@/components/Pricing";
 
-gsap.registerPlugin(SplitText, useGSAP, ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 export default function Home() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
   useGSAP(() => {
     const introTl = gsap.timeline({
       defaults: { ease: "power4.out", delay: 3 },
@@ -40,32 +38,17 @@ export default function Home() {
         },
         0,
       );
-
-    // const split = new SplitText(".gradientText", {
-    //   type: "chars",
-    // });
-    // gsap.set(split.chars, {
-    //   opacity: 0.5,
-    //   color: "#fdfcf3",
-    // });
-    // gsap.to(split.chars, {
-    //   scrollTrigger: {
-    //     trigger: ".gradientTextParent",
-    //     start: "top 80%",
-    //     end: "bottom 80%",
-    //     scrub: true,
-    //   },
-    //   opacity: 1,
-    //   stagger: 1,
-    // });
   }, []);
 
   return (
     <main className="overflow-hidden">
       <section className="bg-brand-black relative z-30 h-screen overflow-hidden">
+        <div className={"absolute bottom-0 w-full"}>
+          <MarqueeText />
+        </div>
         <div className="img-wrapper absolute inset-0 scale-110 transform opacity-0">
           <video
-            src="/videos/offer.mp4"
+            src="/videos/intro-vid.mp4"
             autoPlay={true}
             muted={true}
             loop={true}
@@ -114,19 +97,11 @@ export default function Home() {
 
       <Images />
       <Services />
-      <Coverage />
       <Why />
+      <Pricing />
       <ReviewSection />
       <FaQs />
-
-      {/*<Bounded className={"gradientTextParent"}>*/}
-      {/*  <p className="gradientText text-lg font-bold text-balance text-white/10 md:text-2xl lg:text-3xl xl:text-4xl">*/}
-      {/*    We specialize in deep duct cleaning that goes beyond the surface*/}
-      {/*    removing dust, allergens, and pollutants at the source. Experience*/}
-      {/*    cleaner air, improved energy efficiency, and a healthier home or*/}
-      {/*    workspace with our advanced, eco-friendly solutions.*/}
-      {/*  </p>*/}
-      {/*</Bounded>*/}
+      <Coverage />
     </main>
   );
 }

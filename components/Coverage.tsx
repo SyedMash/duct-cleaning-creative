@@ -26,18 +26,6 @@ const Coverage = () => {
       },
     });
 
-    // gsap.to("body", {
-    //   background: "#fdfcf3",
-    //   duration: 1,
-    //   ease: "power4.out",
-    //   scrollTrigger: {
-    //     trigger: parentContainerRef.current,
-    //     start: "-30% 80%",
-    //     scrub: true,
-    //     // markers: true,
-    //   },
-    // });
-
     tl.to(".usaMap", {
       opacity: 1,
       scale: 1,
@@ -64,14 +52,14 @@ const Coverage = () => {
         className={"usaMap scale-[500%] object-cover opacity-0"}
       />
       <h1
-        className={
-          "font-manrope text-brand-offwhite coverHeading absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 transform text-3xl font-bold md:text-5xl lg:text-6xl"
-        }
+        className="font-manrope text-brand-offwhite coverHeading absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 transform text-2xl font-bold md:text-5xl lg:text-6xl"
       >
-        COVERING <span className={"text-[#bf0a30]"}>U</span>
-        <span className={"text-[#f1f1f1]"}>S</span>
-        <span className={"text-[#002868]"}>A</span>
+        ALL OVER{" "}
+        <span className="bg-gradient-to-r from-[#bf0a30] via-[#f1f1f1] to-[#002868] bg-clip-text text-transparent">
+    USA
+  </span>
       </h1>
+
     </section>
   );
 };

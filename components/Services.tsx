@@ -47,10 +47,14 @@ const Services = () => {
         services we offer
       </h1>
       <div className={"mt-12 flex flex-col gap-6"}>
-        <div className={"flex h-[60vh] w-full flex-col gap-6 md:flex-row"}>
+        <div
+          className={
+            "flex h-[90vh] w-full flex-col gap-6 md:flex-row lg:h-[60vh]"
+          }
+        >
           <div
             className={
-              "serviceBox relative flex h-full flex-1 items-end justify-end overflow-hidden rounded-2xl"
+              "serviceBox relative flex min-h-fit flex-1 items-end justify-end overflow-hidden rounded-2xl"
             }
           >
             <Image
@@ -64,10 +68,10 @@ const Services = () => {
                 "bg-brand-black/50 absolute inset-0 bottom-4 flex size-full flex-col justify-end p-4 backdrop-blur-[2px]"
               }
             >
-              <h1 className={"font-manrope text-2xl font-bold md:text-3xl"}>
+              <h1 className={"font-manrope text-xl font-bold md:text-3xl"}>
                 Residential Duct Cleaning
               </h1>
-              <p className={"text-balance md:text-lg"}>
+              <p className={"text-sm text-balance lg:text-base"}>
                 Your home should be your sanctuary but hidden dust, allergens,
                 and bacteria in your air ducts can compromise the air you
                 breathe. Our residential duct cleaning service removes years of
@@ -79,7 +83,7 @@ const Services = () => {
           </div>
           <div
             className={
-              "bg-brand-offwhite/10 serviceBox relative flex h-full flex-1 items-end justify-end overflow-hidden rounded-2xl"
+              "bg-brand-offwhite/10 serviceBox relative flex min-h-fit flex-1 items-end justify-end overflow-hidden rounded-2xl"
             }
           >
             <Image
@@ -93,10 +97,10 @@ const Services = () => {
                 "bg-brand-black/50 absolute inset-0 bottom-4 flex size-full flex-col justify-end p-4 backdrop-blur-[2px]"
               }
             >
-              <h1 className={"font-manrope text-2xl font-bold md:text-3xl"}>
+              <h1 className={"font-manrope text-xl font-bold md:text-3xl"}>
                 Commercial Duct Cleaning
               </h1>
-              <p className={"text-balance md:text-lg"}>
+              <p className={"text-sm text-balance lg:text-base"}>
                 Clean air isn’t just a luxury it’s a responsibility, especially
                 in shared or high-traffic spaces. Our commercial duct cleaning
                 services are tailored for offices, restaurants, retail, and
@@ -124,10 +128,10 @@ const Services = () => {
               "bg-brand-black/50 absolute inset-0 bottom-4 flex size-full flex-col justify-end p-4 backdrop-blur-[2px]"
             }
           >
-            <h1 className={"font-manrope text-2xl font-bold md:text-3xl"}>
+            <h1 className={"font-manrope text-xl font-bold md:text-3xl"}>
               Dryer Vent Cleaning
             </h1>
-            <p className={"text-balance md:text-lg"}>
+            <p className={"text-sm text-balance lg:text-base"}>
               Lint-clogged dryer vents are one of the leading causes of house
               fires and they also slow down your dryer’s performance. Our dryer
               vent cleaning service removes blockages, reduces fire risk,
