@@ -28,7 +28,7 @@ const firaSans = Fira_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Professional Duct Cleaning | AIRO FIX",
+  title: "AIRO FIX | Professional Duct Cleaning",
   description:
     "Breathe easier with eco-friendly, precision duct cleaning by AIRO FIX. Certified technicians. Real results.",
   keywords: [
@@ -38,13 +38,27 @@ export const metadata: Metadata = {
     "dryer vent cleaning",
     "residential duct service",
   ],
+  icons: {
+    icon: "/images/favicon.ico",
+  },
   openGraph: {
     title: "AIRO FIX – Clean Air Starts Here",
     description: "We clean ducts like no one else. Discover the difference.",
-    images: ["/og-image.jpg"], // 1200x630 preferred
+    url: "https://www.airofixhomesolution.com",
+    siteName: "AIRO FIX",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.airofixhomesolution.com/images/og-image.jpg",
+        alt: "AIRO FIX",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
   alternates: {
-    canonical: "https://www.airofixductclean.com/book",
+    canonical: "https://www.airofixhomesolution.com/book",
   },
 };
 

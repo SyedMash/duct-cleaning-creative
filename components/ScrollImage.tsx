@@ -1,33 +1,33 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import CustomButton from "@/components/CustomButton/CustomButton";
+// import CustomButton from "@/components/CustomButton/CustomButton";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Images = () => {
-  const imageRef = useRef<HTMLImageElement>(null);
-  const secondImageRef = useRef<HTMLImageElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  // const imageRef = useRef<HTMLImageElement>(null);
+  // const secondImageRef = useRef<HTMLImageElement>(null);
+  // const videoRef = useRef<HTMLVideoElement>(null);
 
-  const totalFrames = 191;
-  const secondTotalFrames = 221;
+  // const totalFrames = 191;
+  // const secondTotalFrames = 221;
 
-  const imagePath = (index: number) => {
-    const paddedIndex = String(index).padStart(4, "0");
-    return `/images/frames/frame_${paddedIndex}.jpg`;
-  };
+  // const imagePath = (index: number) => {
+  //   const paddedIndex = String(index).padStart(4, "0");
+  //   return `/images/frames/frame_${paddedIndex}.jpg`;
+  // };
 
-  const secondImagePath = (index: number) => {
-    const paddedIndex = String(index).padStart(4, "0");
-    return `/images/clean-frames/frame_${paddedIndex}.jpg`;
-  };
+  // const secondImagePath = (index: number) => {
+  //   const paddedIndex = String(index).padStart(4, "0");
+  //   return `/images/clean-frames/frame_${paddedIndex}.jpg`;
+  // };
 
   useGSAP(() => {
-    const mm = gsap.matchMedia();
+    // const mm = gsap.matchMedia();
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#image-container",
