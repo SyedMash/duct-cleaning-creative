@@ -53,6 +53,8 @@ export default function Home() {
             muted={true}
             loop={true}
             preload={"auto"}
+            playsInline={true}
+            disablePictureInPicture={true}
             className="size-full scale-150 object-cover"
           />
         </div>

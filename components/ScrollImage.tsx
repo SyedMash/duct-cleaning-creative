@@ -179,6 +179,8 @@ const Images = () => {
           loop={true}
           muted={true}
           preload={"auto"}
+          playsInline={true}
+          disablePictureInPicture={true}
           className={"size-full scale-125 object-cover"}
         />
       </div>
@@ -189,6 +191,8 @@ const Images = () => {
         loop={true}
         muted={true}
         preload={"auto"}
+        playsInline={true}
+        disablePictureInPicture={true}
         className={"h-full w-full object-cover"}
       />
     </div>
