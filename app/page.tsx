@@ -2,8 +2,7 @@
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-
-import CustomButton from "@/components/CustomButton/CustomButton";
+gsap.registerPlugin(useGSAP);
 
 import Services from "@/components/Services";
 import Images from "@/components/ScrollImage";
@@ -13,8 +12,7 @@ import ReviewSection from "@/components/ReviewSection";
 import FaQs from "@/components/FAQs";
 import MarqueeText from "@/components/Marquee";
 import Pricing from "@/components/Pricing";
-
-gsap.registerPlugin(useGSAP);
+import CustomButton from "@/components/CustomButton/CustomButton";
 
 export default function Home() {
   useGSAP(() => {
