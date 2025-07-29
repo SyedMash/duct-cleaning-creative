@@ -181,3 +181,183 @@ export const createBusinessEmailTemplate = (
 </body>
 </html>
 `;
+
+export const createCustomerContactEmailTemplate = (
+  name: string,
+  email: string,
+  phone: string,
+  subject: string,
+  message: string,
+) => `
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIRO FIX Contact Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .header {
+            background: #000000;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        .logo { font-size: 24px; font-weight: bold; }
+        .logo-highlight { color: #0ea5e9; }
+        .content { padding: 20px; }
+        .footer {
+            background: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        .contact {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">AIRO <span class="logo-highlight">FIX</span></div>
+            <p>Breathe in the Difference</p>
+        </div>
+        
+        <div class="content">
+            <h2>Thank You for Your Contacting Us!</h2>
+            <p>Dear ${name},</p>
+            <p>Thank you for contacting AIRO FIX. We have received your message and will contact you shortly.</p>
+            
+            <div class="booking-details">
+                <h3>Contact Details:</h3>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Phone:</strong> ${phone}</p>
+                <p><strong>Subject:</strong> ${subject}</p>
+                <p><strong>Message:</strong> ${message}</p>
+            </div>
+
+            <div class="contact">
+                <h2 class="font-semibold">We will message you soon</h2>
+                <h3>Need immediate assistance?</h3>
+                <p>Call us 24/7 at: <strong>540-515-8283</strong></p>
+                <p>We offer FREE estimates!</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>AIRO FIX Duct Cleaning</p>
+            <p>Serving all over USA</p>
+            <p>© 2025 AIRO FIX. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
+`;
+
+export const createBusinessContactEmailTemplate = (
+  name: string,
+  email: string,
+  phone: string,
+  subject: string,
+  message: string,
+) => `
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIRO FIX Contact Message Received</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .header {
+            background: #000000;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        .logo { font-size: 24px; font-weight: bold; }
+        .logo-highlight { color: #0ea5e9; }
+        .content { padding: 20px; }
+        .footer {
+            background: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        .contact {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">AIRO <span class="logo-highlight">FIX</span></div>
+            <p>Breathe in the Difference</p>
+        </div>
+        
+        <div class="content">
+            <h2>Thank You for Your Contacting Us!</h2>
+            <p>Dear ${name},</p>
+            <p>New contact message.</p>
+            
+            <div class="booking-details">
+                <h3>Contact Details:</h3>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Phone:</strong> ${phone}</p>
+                <p><strong>Subject:</strong> ${subject}</p>
+                <p><strong>Message:</strong> ${message}</p>
+            </div>
+
+            <div class="contact">
+                <h2 class="font-semibold">We will message you soon</h2>
+                <h3>Need immediate assistance?</h3>
+                <p>Call us 24/7 at: <strong>540-515-8283</strong></p>
+                <p>We offer FREE estimates!</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>AIRO FIX Duct Cleaning</p>
+            <p>Serving all over USA</p>
+            <p>© 2025 AIRO FIX. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
+`;

@@ -19,7 +19,14 @@ const Page = ({ params }: { params: { slug: string } }) => {
       >
         {title}
       </h1>
-      {post.content.map((block, i) => {
+
+      <div className="mt-4 text-gray-500">
+        <span>{date}</span>
+        <span className="mx-2">|</span>
+        <span>{author}</span>
+      </div>
+
+      {content.map((block, i) => {
         if (block.type === "paragraph") {
           return (
             <p key={i} className="my-4 text-base md:text-lg">
@@ -37,7 +44,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
         if (block.type === "list") {
           return (
             <ul key={i} className="list-inside list-disc space-y-2">
-              {block.items.map((item, j) => (
+              {block.items?.map((item, j) => (
                 <li key={j} className={"text-base lg:text-lg"}>
                   {item}
                 </li>

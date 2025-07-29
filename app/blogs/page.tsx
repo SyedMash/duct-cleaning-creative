@@ -22,6 +22,7 @@ const Page = () => {
             date={post.date}
             key={idx}
             slug={post.slug}
+            image=""
           />
         ))}
       </div>

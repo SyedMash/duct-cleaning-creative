@@ -21,8 +21,6 @@ export async function POST(req: NextRequest) {
     postalCode,
   } = body;
 
-  console.log(body);
-
   if (
     !name ||
     !email ||
