@@ -11,6 +11,7 @@ import {
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CustomButton from "./CustomButton/CustomButton";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -85,6 +86,14 @@ const FaQs = () => {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
+
+      <div className="mt-6 flex justify-center">
+        <CustomButton
+          text="View All FAQs"
+          href="/faqs"
+          className="introElement font-manrope! text-sm!"
+        />
+      </div>
     </Bounded>
   );
 };

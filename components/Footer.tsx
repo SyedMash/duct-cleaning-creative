@@ -43,15 +43,18 @@ const Footer = () => {
         <div className="mb-10 flex flex-col items-center justify-center gap-6 md:flex-row">
           <Link
             href="/book"
-            className="bg-brand-green rounded-full px-6 py-3 font-medium text-black transition hover:opacity-90"
+            className="bg-brand-green rounded-full px-6 py-3 font-medium text-white transition hover:opacity-90"
           >
             Book a Cleaning
           </Link>
-          <Link href="#faqs" className="hover:text-brand-green transition">
-            FAQ
+          <Link href="/faqs" className="hover:text-brand-green transition">
+            FAQs
           </Link>
-          <Link href="#coverage" className="hover:text-brand-green transition">
-            Coverage
+          <Link href="/contact" className="hover:text-brand-green transition">
+            Contact
+          </Link>
+          <Link href="/about" className="hover:text-brand-green transition">
+            About Us
           </Link>
         </div>
 

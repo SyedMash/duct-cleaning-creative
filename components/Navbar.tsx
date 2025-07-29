@@ -1,14 +1,17 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { navLinks } from "@/constants";
+import Link from "next/link";
 import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+
+import gsap from "gsap";
 import { clsx } from "clsx";
+import { useGSAP } from "@gsap/react";
 import { IoMenuSharp } from "react-icons/io5";
 import { RiCloseLargeLine } from "react-icons/ri";
-import Link from "next/link";
+
+import { navLinks } from "@/constants";
 
 gsap.registerPlugin(useGSAP);
 
@@ -21,6 +24,8 @@ const Navbar = () => {
   const navigationSection = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const parentContainerRef = useRef<HTMLImageElement>(null);
+
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -184,9 +189,12 @@ const Navbar = () => {
               onClick={handleNavbar}
               href={link.link}
               key={link.name}
-              className={
-                "font-fira hover:text-brand-green w-fit cursor-pointer text-2xl leading-[50px] font-semibold transition-all duration-700 md:text-4xl md:leading-[100px] xl:text-5xl 2xl:text-8xl"
-              }
+              className={clsx(
+                "font-fira hover:text-brand-green w-fit cursor-pointer text-2xl leading-[50px] font-semibold transition-all duration-700 md:text-4xl md:leading-[100px] xl:text-5xl 2xl:text-8xl",
+                link.link === pathname
+                  ? "text-brand-green"
+                  : "text-brand-offwhite",
+              )}
               onMouseEnter={() => {
                 handleHoverImage(link.imageUrl);
               }}
