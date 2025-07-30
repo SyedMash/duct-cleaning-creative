@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { AiOutlineLoading } from "react-icons/ai";
 
 import { ContactSchema } from "@/lib/schema/contact.schema";
 import {
@@ -17,7 +18,6 @@ import {
 } from "./ui/form";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import { AiOutlineLoading } from "react-icons/ai";
 import { toast } from "sonner";
 
 const ContactForm = () => {
@@ -155,7 +155,7 @@ const ContactForm = () => {
           />
         </div>
         <Button className={"hover:bg-brand-green cursor-pointer"} size={"lg"}>
-          {loading ? <AiOutlineLoading className={"animate-spin"} /> : "Book"}
+          {loading ? <AiOutlineLoading className={"animate-spin"} /> : "Send"}
         </Button>
       </form>
     </Form>
